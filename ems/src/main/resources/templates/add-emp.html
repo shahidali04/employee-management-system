@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Add Employee</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/add-emp.css}">
+</head>
+
+<body>
+
+<a th:href="@{/dashboard}" class="back-btn">⬅ Back</a>
+
+<div class="form-box">
+
+    <!-- Title -->
+    <h1 class="title">Add Employee</h1>
+    <p class="subtitle">Enter employee details</p>
+
+    <form th:action="@{/save}" method="post">
+
+
+        <div class="form-row">
+            <label>Full Name</label>
+            <input type="text" name="name" placeholder="Enter full name" required>
+        </div>
+
+        <div class="form-row">
+            <label>Email</label>
+            <input type="email" name="email" placeholder="Enter email address" required>
+        </div>
+
+        <div class="form-row">
+            <label>Gender</label>
+            <select name="gender" required>
+                <option value="">Select gender</option>
+                <option>Male</option>
+                <option>Female</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>Department</label>
+            <select name="department" required>
+                <option value="">Select department</option>
+                <option>HR</option>
+                <option>IT</option>
+                <option>Finance</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>Salary</label>
+            <input type="number" name="salary" placeholder="Enter salary" required>
+        </div>
+
+        <div class="btn-group">
+            <button type="button" class="cancel-btn" onclick="window.location.href='/dashboard'">Cancel</button>
+            <button type="reset" class="reset-btn">Reset</button>
+            <button type="submit" class="add-btn">Add</button>
+        </div>
+
+    </form>
+
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('success')) {
+       alert("✅ Employee Added Successfully!");
+    }
+</script>
+
+</body>
+</html>

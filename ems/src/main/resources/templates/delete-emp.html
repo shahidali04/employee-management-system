@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Update Employee</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/add-emp.css}">
+</head>
+
+<body>
+
+<a th:href="@{/dashboard}" class="back-btn">⬅ Back</a>
+
+<div class="form-box">
+
+    <h1 class="title">Delete Employee</h1>
+    <p class="subtitle">Enter employee ID to delete</p>
+
+    <!-- STEP 1: ENTER ID -->
+    <form th:action="@{/find-delete}" method="get">
+
+        <div class="form-row">
+            <label>Employee ID</label>
+
+            <div class="input-group">
+                <input type="number" name="id" placeholder="Enter ID" required>
+
+                <p class="error-msg" th:if="${error}" th:text="${error}"></p>
+            </div>
+        </div>
+
+
+
+        <div class="btn-group find-group">
+            <button type="submit" class="find-btn">Find</button>
+        </div>
+
+    </form>
+
+</div>
+
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+
+    if (urlParams.has('deleted')) {
+        alert("❌ Employee Deleted Successfully!");
+        window.history.replaceState({}, document.title, "/delete-page");
+    }
+</script>
+
+</body>
+</html>

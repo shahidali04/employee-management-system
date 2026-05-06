@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Dashboard</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/dashboard.css}">
+</head>
+<body>
+
+<!-- Navbar -->
+<div class="navbar">
+    <h2>EMS</h2>
+    <div class="nav-right">
+        <span>Welcome, Admin 👤</span>
+        <button class="logout-btn" onclick="window.location.href='/login'">
+            Logout
+        </button>
+    </div>
+</div>
+
+<!-- Stats Section -->
+<div class="stats-container">
+    <div class="stat-card">Total Employees<br><strong th:text="${total}">50</strong></div>
+    <div class="stat-card">Departments<br><strong th:text="${dept}">5</strong></div>
+    <div class="stat-card">Active<br><strong th:text="${active}">45</strong></div>
+</div>
+
+<!-- Action Cards -->
+<div class="dashboard-container">
+
+    <div class="card-container">
+
+        <a th:href="@{/add}"><div class="card">➕ Add Employee</div></a>
+        <a th:href="@{/employees}"><div class="card">📋 View Employees</div></a>
+        <a th:href="@{/update-page}"><div class="card">✏️ Update Employee</div></a>
+        <a th:href="@{/delete-page}"><div class="card">❌ Delete Employee</div></a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

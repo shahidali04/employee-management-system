@@ -1,0 +1,89 @@
+/* Center login/signup */
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Card container */
+.form-container {
+    background: white;
+    padding: 35px;
+    border-radius: 12px;
+    width: 320px;
+
+    text-align: center;
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Title */
+.title {
+    margin: 0;
+    font-size: 32px;
+    font-weight: bold;
+}
+
+/* Subtitle */
+.subtitle {
+    margin: 10px 0 20px;
+    color: #555;
+}
+
+/* Inputs & button */
+.form-container input,
+.form-container button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+
+    border-radius: 6px;
+
+    box-sizing: border-box;
+}
+
+/* Input */
+.form-container input {
+    border: 1px solid #ccc;
+    outline: none;
+}
+
+/* Button */
+.form-container button {
+    border: none;
+
+    background-color: black;
+    color: white;
+
+    font-size: 16px;
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+/* Hover */
+.form-container button:hover {
+    background-color: #333;
+    transform: scale(1.03);
+}
+
+/* Bottom text */
+.link-text {
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+/* Links */
+.link-text a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.link-text a:hover {
+    text-decoration: underline;
+}

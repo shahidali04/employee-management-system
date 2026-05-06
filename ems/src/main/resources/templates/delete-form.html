@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Delete Employee</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/add-emp.css}">
+</head>
+
+<body>
+
+<a th:href="@{/delete-page}" class="back-btn">⬅ Back</a>
+
+<div class="form-box">
+
+    <!-- Title -->
+    <h1 class="title title-1">Delete Employee</h1>
+    <p class="subtitle">Review details before deleting</p>
+
+    <!-- Employee Details (READ-ONLY) -->
+
+    <div class="form-row">
+        <label>Name</label>
+        <span th:text="${emp.name}"></span>
+    </div>
+
+    <div class="form-row">
+        <label>Email</label>
+        <span th:text="${emp.email}"></span>
+    </div>
+
+    <div class="form-row">
+        <label>Gender</label>
+        <span th:text="${emp.gender}"></span>
+    </div>
+
+    <div class="form-row">
+        <label>Department</label>
+        <span th:text="${emp.department}"></span>
+    </div>
+
+    <div class="form-row">
+        <label>Salary</label>
+        <span th:text="${emp.salary}"></span>
+    </div>
+
+    <!-- Buttons -->
+    <div class="btn-group form-btn">
+
+        <button type="button"
+                class="cancel-btn"
+                onclick="window.location.href='/delete-page'">
+            Cancel
+        </button>
+
+        <a th:href="@{'/delete-confirm/' + ${emp.id}}"
+           class="delete-btn"
+           onclick="return confirm('Are you sure you want to delete this employee?')">
+            Delete
+        </a>
+
+    </div>
+
+</div>
+
+</body>
+</html>

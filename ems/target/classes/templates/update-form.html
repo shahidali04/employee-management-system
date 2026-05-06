@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Update Employee</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/add-emp.css}">
+</head>
+
+<body>
+
+<a th:href="@{/dashboard}" class="back-btn">⬅ Back</a>
+
+<div class="form-box">
+
+    <h1 class="title title-1">Update Employee</h1>
+
+    <form th:action="@{/update}" method="post">
+
+        <input type="hidden" name="id" th:value="${emp.id}">
+
+        <div class="form-row">
+            <label>Name</label>
+            <input type="text" name="name" th:value="${emp.name}" required>
+        </div>
+
+        <div class="form-row">
+            <label>Email</label>
+            <input type="email" name="email" th:value="${emp.email}" required>
+        </div>
+
+        <div class="form-row">
+            <label>Gender</label>
+            <select name="gender">
+                <option value="Male" th:selected="${emp.gender=='Male'}">Male</option>
+                <option value="Female" th:selected="${emp.gender=='Female'}">Female</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>Department</label>
+            <select name="department">
+                <option value="HR" th:selected="${emp.department=='HR'}">HR</option>
+                <option value="IT" th:selected="${emp.department=='IT'}">IT</option>
+                <option value="Finance" th:selected="${emp.department=='Finance'}">Finance</option>
+            </select>
+        </div>
+
+        <div class="form-row">
+            <label>Salary</label>
+            <input type="number" name="salary" th:value="${emp.salary}" required>
+        </div>
+
+        <div class="btn-group form-btn">
+            <button type="button" class="cancel-btn" onclick="window.location.href='/dashboard'">Cancel</button>
+            <button type="submit" class="add-btn">Save Changes</button>
+        </div>
+
+    </form>
+
+</div>
+
+
+</body>
+</html>
