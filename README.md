@@ -1,7 +1,9 @@
 # employee-management-system
-Full-stack Employee Management System built using Spring Boot, Thymeleaf, and MySQL.
+
+Employee Management System built with Spring Boot, Spring Data JPA, Thymeleaf, and MySQL featuring authentication, CRUD operations, employee management, and an admin dashboard.
 
 ## Features
+
 - Add Employee
 - View Employees
 - Update Employee
@@ -12,6 +14,7 @@ Full-stack Employee Management System built using Spring Boot, Thymeleaf, and My
 - Real-time Dashboard
 
 ## Tech Stack
+
 - Java
 - Spring Boot
 - Thymeleaf
@@ -25,5 +28,27 @@ The application follows MVC architecture:
 - Entity → Database mapping
 - Thymeleaf → Frontend rendering
 
-## Author
-Ali
+## 👨‍💻 Author
+
+**Shahid Ali**
+
+- GitHub: https://github.com/shahidali04
+- LinkedIn: https://linkedin.com/in/shahidali04
+
+## ⚙️ Installation
+
+1. Clone the repository
+
+```bash
+git clone https://github.com/shahidali04/employee-management-system.git
+```
+
+2. Open the project in IntelliJ IDEA.
+
+3. Configure MySQL in `application.properties`.
+
+4. Run the application.
+
+5. Open:
+
+http://localhost:8080
